@@ -1,15 +1,24 @@
 #!/usr/bin/python3
-"""Task 0"""
+""" Lockboxes """
 
 
 def canUnlockAll(boxes):
-    """method that determines if all the boxes can be opened"""
-    keys = [*range(len(boxes))]
-    unlock_boxes = [0]
-    for key, box in zip(keys, boxes):
-        for k in box:
-            if (k < len(boxes)) and (k not in unlock_boxes) and (k != key):
-                unlock_boxes.append(k)
-    if len(unlock_boxes) == len(boxes):
+    """ Method that determines if all the boxes can be opened """
+    Nboxes = len(boxes)
+    closed_boxes = [0]
+    checked_boxes = set(closed_boxes)
+
+    if Nboxes <= 1:
         return True
-    return False
+
+    while closed_boxes:
+        box = closed_boxes.pop()
+        for key in boxes[box]:
+            if key not in checked_boxes and key < Nboxes:
+                closed_boxes.append(key)
+                checked_boxes.add(key)
+
+    if len(checked_boxes) == Nboxes:
+        return True
+    else:
+        return False
