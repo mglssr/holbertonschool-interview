@@ -14,14 +14,14 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *current;
 	listint_t *new;
 
-	if (!head)
+	if (head == NULL)
 		return (NULL);
 
-	if (!number)
+	if (number == NULL)
 		return (NULL);
 
 	new = malloc(sizeof(listint_t));
-	if (!new)
+	if (new == NULL)
 		return (NULL);
 	current = *head;
 
