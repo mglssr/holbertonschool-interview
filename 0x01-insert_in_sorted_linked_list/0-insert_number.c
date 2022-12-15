@@ -38,11 +38,6 @@ listint_t *insert_node(listint_t **head, int number)
 			(*new).next = NULL;
 			return (new);
 		}
-		if (current == NULL)
-		{
-			free(new);
-			return (NULL);
-		}
 	}
 	new->next = current->next;
 	current->next = new;
