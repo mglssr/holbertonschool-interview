@@ -25,11 +25,11 @@ listint_t *insert_node(listint_t **head, int number)
 		return (NULL);
 	current = *head;
 
-	(*new).n = number;
+	new->n = number;
 
 	if (current->n > number)
 	{
-		(*new).next = *head;
+		new->next = *head;
 		*head = new;
 		return (new);
 	}
