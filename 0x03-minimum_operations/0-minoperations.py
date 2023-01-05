@@ -2,19 +2,24 @@
 """task 0"""
 
 
-def get_divs(n):
-    """return a list of divs"""
-    divs = []
-    for id in range(1, int(n/2)):
-        if(int(n/id) == n/id):
-            divs.append(id)
-    return divs
+def countProcess(num):
+    """ Return list of process until n H """
+    con = 1
+    p_list = []
+    val = num
+    while val != 1:
+        con += 1
+        if val % con == 0:
+            while (val % con == 0 and val != 1):
+                val /= con
+                p_list.append(con)
+
+    return p_list
 
 
 def minOperations(n):
-    """Minimum Operations"""
-    if n < 2 or type(n) != int:
+    """ Return sum of process until n H """
+    if n < 2 or type(n) is not int:
         return 0
-    divs = get_divs(n)
-    max_div = max(get_divs(n))
-    return int(n/max_div + minOperations(max_div))
+    values = countProcess(n)
+    return sum(values)
