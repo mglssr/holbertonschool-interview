@@ -13,10 +13,8 @@ def get_divs(n):
 
 def minOperations(n):
     """Minimum Operations"""
-    if n <= 1:
+    if n < 2 or type(n) is not int:
         return 0
-    if n <= 3:
-        return n
     divs = get_divs(n)
     max_div = max(get_divs(n))
     return int(n/max_div + minOperations(max_div))
