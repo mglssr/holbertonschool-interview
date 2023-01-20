@@ -1,5 +1,5 @@
 # 0x04. Sandpiles
-## [0. Minimum Operations](https://github.com/mglssr/holbertonschool-interview/blob/master/0x04-sandpiles/0-sandpiles.c)
+## [0. Sandpiles](https://github.com/mglssr/holbertonschool-interview/blob/master/0x04-sandpiles/0-sandpiles.c)
 
 
 
